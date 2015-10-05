@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en", ng-app="DelmarApp" class="qp-ui" data-qp-ui="{ 'Futurizr':{ 'hasTouch': 'touch'}}">
+	<head>
+		<meta charset="UTF-8">
+		<title>Delmar Extranet</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="Margarita Mayoral Villa" />
+		<meta name="description" content=""/>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-aria.min.js"></script>
+		<script src="https://gitcdn.xyz/repo/angular/bower-material/v0.11.0/angular-material.js"></script>
+		<!-- <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js"></script> -->
+    
+		<link rel="stylesheet" href="https://gitcdn.xyz/repo/angular/bower-material/v0.11.0/angular-material.css">
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.5.0/angular-material-icons.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.3/ui-bootstrap.min.js"></script>
+		
+		<!-- <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.5.0/angular-material-icons.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.3/ui-bootstrap-tpls.min.js"></script> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.3/ui-bootstrap.min.js"></script>
+		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+		
+		<script src="DelmarcargoApp.js"></script>
+		<script src="DelmarControllers.js"></script>
+		<script src="MainSidenavService.js"></script>
+		<script src="MainToolsCtrl.js"></script>
+		<script src="ThemingProvider.js"></script>
+		<script src="stateprovider.js"></script> 
+		<script src="RunState.js"></script>
+		<script src="RightCtrlSidenav.js"></script> 
+		<script src="BottomSheetCtrl.js"></script>
+		<script src="TableCtrl.js"></script>
+		<script src="PolicyService.js"></script>
+		<script src="PolicyCtrl.js"></script>
+		<!-- <script src="DatepickerCtrl.js"></script> -->
+		
+		
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+		<link rel="stylesheet" src="https://normalize-css.googlecode.com/svn/trunk/normalize.css" >
+		 --><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic"/>
+		
+		<!-- Angular Material CSS using GitCDN to load directly from `bower-material/master` -->
+		<!-- <link rel="stylesheet" href="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.css"/> -->
+<!-- 		<link rel="stylesheet" href="assets/app.css"/>
+ -->	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
+		
+		<link rel="stylesheet" href="main.css">
+		<style type="text/css">
+				.datepickerdemoBasicUsage {
+					/** Demo styles for mdCalendar. */ }
+				.datepickerdemoBasicUsage md-content {
+					padding-bottom: 200px; }
+
+		</style>
+		
+		
+	</head>
+	<body layout="column" ng-controller="AppCtrlDelmar" class="section-material-design md-accent qp-ui qp-ui-mask">
+		<!--[if lt IE 10]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<!-- <md-toolbar layout="row"  class="md-whiteframe-z5 md-primary">
+			<div class="md-toolbar-tools md-hue-3">
+				<md-button ng-click="toggleSidenav('left')" hide-gt-md class="md-icon-button menuBtn">
+					<md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+				</md-button>
+				<h1 class="intro"> <img layout-align-gt-sm="center" ng-src="header/logo.png" width="220px" height="60px" alt=""> </h1>
+			</div>
+		</md-toolbar>
+		<md-toolbar layout="row" class="md-accent subheader1 md-whiteframe-z3"><h1> Welcome to Delmar Extranet! </h1></md-toolbar> -->
+		<md-toolbar layout="row" class="md-whiteframe-z3 md-hue-3 md-tall">
+		<md-button ng-click="toggleSidenav('left')" hide-gt-md class="md-icon-button menuBtn">
+					<md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+		</md-button>
+			<h1 layout-align-gt-sm="center center" layout-align="center center" class="md-toolbar-tools"><a href="index.html"><img src="https://www.delmarcargo.com/img/delmarcargo_logo_2x.png" alt="" width="185" height="45"></a></h1>
+			
+		</md-toolbar>
+		<md-content layout="row" layout-sm="column" flex class="content-wrapper">
+			<div   ng-controller="MainToolsCtrl">
+				<md-sidenav layout="column"  class="md-sidenav-left md-whiteframe-z3" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" >
+					<md-toolbar layout="row" class="md-whiteframe-z2 md-primary">
+						<h4 layout-align="center center" layout-align-gt-sm="center" class="md-toolbar-tools" fill-height layout-fill>Welcome to Delmar Extranet</h4>
+					</md-toolbar>
+					<md-content>
+						<!-- <md-button ng-click="close()" class="md-primary" hide-gt-md md-raised>
+										Close
+						</md-button> -->
+							<div layout="row" layout-align="center center" layout-wrap >						
+								<md-whiteframe class="md-whiteframe-z1" layout layout-align="center center" ng-repeat="it in maintools" >
+									<a ui-sref="{{it.name}}" ui-sref-active="active"><md-button class="md-raised" ng-click="close()"  ng-class="{'selected' : it === selected}">{{it.name}}</md-button></a>
+								</md-whiteframe>
+							</div>
+					</md-content>
+				</md-sidenav>
+			</div>
+			
+			<div layout="row"  layout-sm="column" flex class="content-wrapper" id="primary-col">	
+				
+			<div>
+				<md-content layout="column" flex class="md-padding" selected="{{selected.name}}">
+						<div ui-view ></div>
+				</md-content>
+			</div>
+			<!-- <div> 
+				<md-content  ng-controller="BottomSheetExample" class="md-padding bottomSheetdemoBasicUsage">	
+					<hr>
+					<div class="bottom-sheet-demo inset"  layout-align="center" >
+					
+						
+					<md-button flex="10" class="md-primary md-raised" ng-click="showGridBottomSheet($event)" md-whiteframe-z2>Today's Holidays
+					<script type="text/ng-template" id="bottom-sheet-grid-template.html">
+					<md-bottom-sheet class="md-grid md-has-header">
+						<md-list>
+							<md-list-item ng-repeat="item in items">
+								<md-button class="md-grid-item-content" ng-click="gridItemClick($index)">
+									<md-icon md-svg-src="{{item.icon}}"></md-icon>
+									<div class="md-grid-text"> {{ item.name }} </div>
+								</md-button>
+							</md-list-item>
+						</md-list>
+					</md-bottom-sheet>
+					</script> 
+					</md-button>
+					</div>
+					<hr>
+					<div ng-if="alert">
+						<br/>
+						<b layout="row" layout-align="center center" class="md-padding">
+							{{alert}}
+						</b>
+					</div>
+				</md-content>
+			</div>  -->
+				
+			</div>
+			<!-- <div>
+				<div layout="row" layout-sm="column" flex class="content-wrapper">
+				<md-content  ng-controller="BottomSheetExample" class="md-padding bottomSheetdemoBasicUsage">	
+					<hr>
+					<div class="bottom-sheet-demo inset "  layout-sm="column" layout-align="center" >
+					
+						
+					<md-button flex="10" class="md-primary md-raised" ng-click="showGridBottomSheet($event)" md-whiteframe-z2>Today's Holidays
+					<script type="text/ng-template" id="bottom-sheet-grid-template.html">
+					<md-bottom-sheet class="md-grid md-has-header">
+						<md-list>
+							<md-list-item ng-repeat="item in items">
+								<md-button class="md-grid-item-content" ng-click="gridItemClick($index)">
+									<md-icon md-svg-src="{{item.icon}}"></md-icon>
+									<div class="md-grid-text"> {{ item.name }} </div>
+								</md-button>
+							</md-list-item>
+						</md-list>
+					</md-bottom-sheet>
+					</script> 
+					</md-button>
+					</div>
+					<hr>
+					<div ng-if="alert">
+						<br/>
+						<b layout="row" layout-align="center center" class="md-padding">
+							{{alert}}
+						</b>
+					</div>
+				</md-content>
+	
+					
+					
+				</div>
+            
+			</div>  -->
+			
+		
+		<md-sidenav layout="column" class="md-sidenav-right md-whiteframe-z3" md-component-id="right" md-hue-2>
+			<md-toolbar class="md-theme-light">
+				<h1 class="md-toolbar-tools">File Maintenance</h1>
+			</md-toolbar>
+			<md-content ng-controller="RightCtrl" layout-padding>
+				<md-list  class="md-menu-demo md-tabs" md-primary>
+					<md-list-item>
+						<md-button ng-click="close()" class="md-primary">
+							Close
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						Broker Forwarder FM
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						ChargeCode FM
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						Carrier FM
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						Category FM
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target="">City FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target>Commodities FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target="">Company FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target>Country FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target="">Currency FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target>DelCom Department FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target="">Department FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target>Department Service FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target="">Equipment FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target>Facility FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target="">Freight Type FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target>Image Files FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target="">Inco Term FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target>Program Admin</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target="">Prov/State FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target>Replace City Delete</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target="">Sales & CSR</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target>Site FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target="">Staff Profile Update</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target>Unit of Measure FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target="">User Access Template FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target>User Admin</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target="">Title FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target>Vessel FM</span>
+						</md-button>
+					</md-list-item>
+					<md-list-item>
+						<md-button class=" md-warning md-hue-1 md-tab">
+						<span md-menu-align-target="">Zone FM</span>
+						</md-button>
+					</md-list-item>
+				</md-list>
+			</md-content>
+		</md-sidenav>
+	</md-content>
+	<!-- <div>
+				<div layout="row" layout-sm="column" flex class="content-wrapper">
+				<md-content  ng-controller="BottomSheetExample" class="md-padding bottomSheetdemoBasicUsage">	
+					<hr>
+					<div class="bottom-sheet-demo inset "  layout-sm="column" layout-align="center" >
+					
+						
+					<md-button flex="10" class="md-primary md-raised" ng-click="showGridBottomSheet($event)" md-whiteframe-z2>Today's Holidays
+					<script type="text/ng-template" id="bottom-sheet-grid-template.html">
+					<md-bottom-sheet class="md-grid md-has-header">
+						<md-list>
+							<md-list-item ng-repeat="item in items">
+								<md-button class="md-grid-item-content" ng-click="gridItemClick($index)">
+									<md-icon md-svg-src="{{item.icon}}"></md-icon>
+									<div class="md-grid-text"> {{ item.name }} </div>
+								</md-button>
+							</md-list-item>
+						</md-list>
+					</md-bottom-sheet>
+					</script> 
+					</md-button>
+					</div>
+					<hr>
+					<div ng-if="alert">
+						<br/>
+						<b layout="row" layout-align="center center" class="md-padding">
+							{{alert}}
+						</b>
+					</div>
+				</md-content>
+	
+					
+					
+				</div>
+            
+			</div>  -->
+		 <!-- Angular Material Dependencies -->
+	
+		<script type="text/javascript">
+
+				
+		</script>
+	</body>
+</html>
